@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Agendamento TCC</title>
+    <!-- Adicione a ligação para o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body class="container mt-5">
+    <div class="mb-4">
+        <a href="/teacher" class="btn btn-primary">Go Professor</a>
+        <a href="/student" class="btn btn-primary">Go Alunos</a>
+        <a href="/classroom" class="btn btn-primary">Go Salas</a>
+        <a href="/scheduling" class="btn btn-primary">Go Agendamento</a>
+    </div>
+    <h1>Adicionar sala</h1>
+    <form action="/classroom/addClassroom" method="POST">
+        <div class="form-group">
+            <label for="Codigo_sala">Código da sala</label>
+            <input type="text" name="Codigo_sala" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Nome_sala">Nome da sala</label>
+            <input type="text" name="Nome_sala" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Hora_inicio_reserva">Inicio da reserva</label>
+            <input type="time" name="Hora_inicio_reserva" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Hora_fim_reserva">Fim da reserva</label>
+            <input type="time" name="Hora_fim_reserva" class="form-control">
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <legend>Local:</legend>
+                <div class="form-check">
+                    <input type="radio" name="Local_sala" id="sala" value="Sala" class="form-check-input">
+                    <label for="sala" class="form-check-label">Sala</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="Local_sala" id="laboratorio" value="Laboratório" class="form-check-input">
+                    <label for="laboratorio" class="form-check-label">Laboratório</label>
+                </div>
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <legend>Reservado:</legend>
+                <div class="form-check">
+                    <input type="radio" name="Reservado" id="true" value="Sim" class="form-check-input">
+                    <label for="true" class="form-check-label">Sim</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="Reservado" id="false" value="Não" class="form-check-input">
+                    <label for="false" class="form-check-label">Não</label>
+                </div>
+            </fieldset>
+        </div>
+        <a href="/classroom" class="btn btn-secondary">Voltar</a>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+
+    <!-- Adicione a ligação para o Bootstrap JS e jQuery (necessários para alguns componentes do Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

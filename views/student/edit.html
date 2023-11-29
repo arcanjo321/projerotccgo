@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Agendamento TCC</title>
+    <!-- Adicione a ligação para o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body class="container mt-5">
+    <div class="mb-4">
+        <a href="/teacher" class="btn btn-primary">Go Professor</a>
+        <a href="/student" class="btn btn-primary">Go Alunos</a>
+        <a href="/classroom" class="btn btn-primary">Go Salas</a>
+        <a href="/scheduling" class="btn btn-primary">Go Agendamento</a>
+    </div>
+    <h1>Editar dados do Aluno(a)</h1>
+    <form action="/student/editStudent" method="POST">
+        <input type="hidden" name="id" value="{{ .student.Id }}">
+        <div class="form-group">
+            <label for="Nome_aluno">Nome do aluno</label>
+            <input type="text" name="Nome_aluno" value="{{ .student.Nome_aluno }}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Matricula">Matrícula</label>
+            <input type="text" name="Matricula" value="{{ .student.Matricula }}" class="form-control">
+        </div>
+        <a href="/student" class="btn btn-secondary">Voltar</a>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+
+    <!-- Adicione a ligação para o Bootstrap JS e jQuery (necessários para alguns componentes do Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

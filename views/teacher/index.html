@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Agendamento TCC</title>
+    <!-- Adicione a ligação para o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body class="container mt-5">
+    <div class="mb-4">
+        <a href="/teacher" class="btn btn-primary">Go Professor</a>
+        <a href="/student" class="btn btn-primary">Go Alunos</a>
+        <a href="/classroom" class="btn btn-primary">Go Salas</a>
+        <a href="/scheduling" class="btn btn-primary">Go Agendamento</a>
+    </div>
+    <div>
+        <h2>Lista de professores</h2>
+        <a href="/teacher/addTeacher" class="btn btn-success mb-2">Adicionar Professor</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>CPF</th>
+                    <th>Nome do Professor</th>
+                    <th>Externo</th>
+                    <th>Instituição</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range .teachers }}
+                <tr>
+                    <td>{{ .Id }}</td>
+                    <td>{{ .Cpf }}</td>
+                    <td>{{ .Nome_professor }}</td>
+                    <td>{{ .Externo }}</td>
+                    <td>{{ .Instituicao }}</td>
+                    <td>
+                        <a href="/teacher/editTeacher?id={{ .Id }}" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="/teacher/deleteTeacher?id={{ .Id }}" onclick="return confirm('Tem certeza que deseja deletar esse professor?')" class="btn btn-danger btn-sm">Excluir</a>
+                    </td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Adicione a ligação para o Bootstrap JS e jQuery (necessários para alguns componentes do Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
